@@ -439,11 +439,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Apply difficulty filter
-      if (currentDifficulty) {
-        if (details.difficulty !== currentDifficulty) {
-          return;
-        }
+      // Apply difficulty filter: when a specific difficulty is selected,
+      // show only activities with that difficulty OR activities with no difficulty (open to all levels)
+      if (currentDifficulty && details.difficulty && details.difficulty !== currentDifficulty) {
+        return;
       }
 
       // Apply search filter
